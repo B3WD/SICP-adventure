@@ -1,0 +1,35 @@
+#lang simply-scheme
+
+;(define (ends-e sens)
+;  (if ((equal? (last (first sens)) 'e)
+;       (se (last (first sens)) (ends-e (bf sens))))
+;      (else (ends-e (bf sens)))
+;  )
+;)
+
+;(define (ends-e sens)
+;  ( (if (equal? (last (first sens)) 'e)
+;        (se (last (first sens)) (ends-e (bf sens)))
+;        (ends-e (bf sens)))
+;  )
+;)
+
+;(define (ends-e sens)
+;  ( (cond ((empty? sens) '())
+;          ((equal? (last (first sens)) 'e)
+;           (se (first sens) (ends-e (bf sens))))
+;          (else (ends-e (bf sens))))
+;  )
+;)
+
+(define (ends-e sens)
+  (cond ((empty? sens) '())
+         ((equal? (last (first sens)) 'e)
+          (se (first sens) (ends-e (bf sens))))
+         (else (ends-e (bf sens)))))
+
+(ends-e '(please put the salami above the blue elephant))
+(ends-e '(outside is foggy and a tree with three braches is swaying))
+(ends-e '(this task has been completed))
+(ends-e '())
+(ends-e '(e ee eee eeeeE eee ee e))

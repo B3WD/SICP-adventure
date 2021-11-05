@@ -15,6 +15,7 @@
   (/ (+ x y) 2))
 
 ;; improved good-enough? procedure.
+;; Simple solution from: http://community.schemewiki.org/?sicp-ex-1.7
 (define (good-enough? guess x) 
   (= (improve guess x) guess))
 
